@@ -1,6 +1,8 @@
 import React from "react";
-//import { names } from "./names";
 import "./styles.css";
+
+let  alarm = new Audio("https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3") 
+
 
 let attr = {
   style: {
@@ -14,7 +16,8 @@ let attr = {
 function tick_tock(props) {
   const timeLeft = { time: props.time.timer };
   let color = timeLeft.time < 12 ? "red" : "";
-  //console.log(timeLeft.time,color)
+  play(timeLeft.time)
+  console.log(timeLeft.time,color)
   attr.style = { ...attr.style, color: color };
   return (
     <section>
@@ -26,5 +29,10 @@ function tick_tock(props) {
     </section>
   );
 }
+
+let play = (t) => {
+  if( t < 1) alarm.play();
+}
+
 
 export default tick_tock;

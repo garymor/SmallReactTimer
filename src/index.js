@@ -5,8 +5,8 @@ import Clock from "./App";
 const rootElement = document.getElementById("root");
 
 const time = {
-  timerImmutable: 14,
-  timer: 15
+  timerImmutable: 10,
+  timer: 10
 };
 
 function init() {
@@ -19,12 +19,17 @@ function init() {
   );
 }
 
+
+
 let timeout = () => {
   if (time.timer > 0) {
     init(time.timer--);
   } else clearInterval(myInterval);
 };
 
-let myInterval = setInterval(() => {
+
+timeout()
+
+ let myInterval = setInterval(() => {
   timeout();
-}, 1000);
+ }, 1000);
