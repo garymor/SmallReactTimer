@@ -1,0 +1,21 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+body {
+  background-color: #282c34;
+  color: white;
+  padding: 40px;
+  font-family: Arial;
+  text-align: center;
+}
+
+.head{
+  font-size: 24px;
+  padding:30px;
+  border-bottom-color: aquamarine;
+  border:1px solid aquamarine;
+  margin:20px;
+  border-radius: 20px;
+}
