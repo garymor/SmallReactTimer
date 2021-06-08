@@ -13,20 +13,28 @@ let attr = {
   }
 };
 
-function tick_tock(props) {
+function Task(props) {
+  return <div className="head">  {props.descrpt} {props.sub} </div>
+}
+
+function Tick(props) {
   const timeLeft = { time: props.time.timer };
   let color = timeLeft.time < 12 ? "red" : "";
   play(timeLeft.time)
   console.log(timeLeft.time,color)
   attr.style = { ...attr.style, color: color };
   return (
+    <>
+    <Task descrpt = "TIME TO Learn React" />
+    <Task descrpt =  "T I M E R _____ COUNTING  FROM"   sub={props.time.timerImmutable} />
     <section>
-      <div className="head">timer set to {props.time.timerImmutable} sec </div>
+    
       <div id="timer" {...attr}>
         {" "}
         {timeLeft.time--}{" "}
       </div>
     </section>
+    </>
   );
 }
 
@@ -35,4 +43,4 @@ let play = (t) => {
 }
 
 
-export default tick_tock;
+export default Tick;
